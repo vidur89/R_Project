@@ -17,13 +17,13 @@
 *14 - `completeData`:_ Stores the merged data from the raw sensor reading combned with their subject and activity name for both test and train case<br />
 *15 - `MeanDATA`:_ THe final tidy outcome as expected.<br /><br />
 
-##Data Transformation
-*1 - Data is downloaded and read into and the memory using the `read.table()`
-*2 - The data is kept separated based on its type, ie. train and test.
-*3 - The names to be given to the data frame is stripped from the labels given and the file names using `grep()`
-*4 - `gsub()` function is used to tidy the column names by removing the unnecessary information from the feature names.
-*5 - We assign the names of the activity data set and subject data set  by merging the columns to the data containing the raw data reading from the sensor using `cbind()` function
-*6 - In the end we create a new tidy dataset with the averages for each variable (mean and std) for each acitvity and subject
-*7 - This `TidyDataSet.txt dataset` is uploaded to the repo 
+##Data Transformation<br />
+*1 - Data is downloaded and read into and the memory using the `read.table()`<br />
+*2 - The data is kept separated based on its type, ie. train and test.<br />
+*3 - The names to be given to the data frame is stripped from the labels given and the file names using `grep()`<br />
+*4 - `gsub()` function is used to tidy the column names by removing the unnecessary information from the feature names.<br />
+*5 - We assign the names of the activity data set and subject data set  by merging the columns to the data containing the raw data reading from the sensor using `cbind()` function<br />
+*6 - In the end we create a new tidy dataset with the averages for each variable (mean and std) for each acitvity and subject<br />
+*7 - This `TidyDataSet.txt dataset` is uploaded to the repo <br />
 
 
