@@ -15,3 +15,4 @@ testData: Stores the dataframe containing the mean values of the raw sensor read
 trainData:  Stores the dataframe containing the mean values of the raw sensor reading for train combned with their subject and activity name
 completeData: Stores the merged data from the raw sensor reading combned with their subject and activity name for both test and train case
 MeanDATA: THe final tidy outcome as expected.
+
