@@ -50,18 +50,21 @@ featureNameFile$feature = gsub('-mean', 'Mean', featureNameFile$feature)  # Repl
 featureNameFile$feature = gsub('-std', 'Std', featureNameFile$feature) # Replace `-std' by 'Std'
 featureNameFile$feature = gsub('[-()]', '', featureNameFile$feature) # Remove the parenthesis and dashes
 
+temp<-grep("Mean|Std",featureNameFile$feature)
+
 #substituting the names
 setnames(testData,featureNameFile$feature)
 setnames(trainData,featureNameFile$feature)
-
+testData<-testData[temp]
+trainData<-trainData[temp]
 #adding the other files containing subject and activity to the dataframe
 w<-apply(combinedTest[2:nrow(combinedTest),],1,FUN=dataForm,value=1)
 w<-apply(combinedTrain[2:nrow(combinedTrain),],1,FUN=dataForm,value=2)
 w<-NULL
 
-
 completeData<-rbind(trainData,testData)
+
 MeanDATA <- ddply(completeData, .(subject, y), function(x) colMeans(x[,1:(ncol(completeData)-2)]))
 MeanDATA<-transform(MeanDATA,y=as.factor(y))
 levels(MeanDATA$y)<-c('WALKING', 'WALKING_UPSTAIRS', 'WALKING_DOWNSTAIRS', 'SITTING', 'STANDING', 'LAYING')
-write.table(MeanDATA,file="./TideySet.txt",row.names = F)
+write.table(MeanDATA,file="./R_Project/TidyDataSet.txt",row.names = F)
